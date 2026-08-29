@@ -78,3 +78,24 @@ Project Status
 
 The project is currently under development, and new features and UI improvements will be added gradually.
 
+
+## Screenshots
+
+### Home Page
+
+![Home Page](./screenshots/home.png)
+
+### Doctor List
+
+![Doctor List](./screenshots/doctors.png)
+
+### Doctor Details
+
+![Doctor Details](./screenshots/doctor-details.png)
+
+### Book Appointment
+
+![Book Appointment](./screenshots/book-appointment.png)
+
+### Confirmation Page
+![Confirmatiom Page](./screenshots/confirmation-page.png)
