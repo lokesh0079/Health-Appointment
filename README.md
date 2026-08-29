@@ -1,16 +1,80 @@
-# React + Vite
+# Health Appointment App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A frontend health appointment application built using React.js.
 
-Currently, two official plugins are available:
+The application allows users to view doctors, open their profiles, and book an appointment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Home page with health appointment introduction
+- Display list of doctors
+- View individual doctor details
+- Navigate between pages using React Router
+- Doctor profile routing using dynamic doctor IDs
+- Handle invalid doctor IDs
+- Appointment booking page
+- Basic appointment form
+- Header and footer components
+- Doctor data managed using JavaScript objects and arrays
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies Used
 
-## Expanding the Oxlint configuration
+- React.js
+- JavaScript
+- React Router
+- HTML5
+- CSS3
+- Bootstrap
+- Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## React Concepts Used
+
+- Functional Components
+- Props
+- `useState`
+- `useNavigate`
+- `useParams`
+- Conditional Rendering
+- Array methods such as `map()` and `find()`
+- Component-based architecture
+
+## Project Structure
+
+```text
+src/
+├── assets/
+├── components/
+│   ├── Doctors.jsx
+│   ├── Footer.jsx
+│   ├── HeaderName.jsx
+│   ├── Hero.jsx
+│   ├── InvalidId.jsx
+│   └── Specialization.jsx
+├── data/
+│   └── doctors.js
+├── pages/
+│   ├── BookAppointment.jsx
+│   └── DoctorDetails.jsx
+├── App.css
+├── App.jsx
+└── main.jsx
+
+
+How to Run the Project
+1. Clone the repository
+git clone YOUR-GITHUB-REPOSITORY-URL
+2. Navigate to the project directory
+cd health_appointment
+3. Install dependencies
+npm install
+4. Start the development server
+npm run dev
+
+Open the local development URL provided by Vite in your browser.
+
+Project Status
+
+🚧 Initial frontend version.
+
+The project is currently under development, and new features and UI improvements will be added gradually.
+
