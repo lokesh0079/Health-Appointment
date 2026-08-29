@@ -4,6 +4,10 @@ A frontend health appointment application built using React.js.
 
 The application allows users to view doctors, open their profiles, and book an appointment.
 
+## Live Demo
+
+[View Live Application](https://health-appointment-six.vercel.app/)
+
 ## Features
 
 - Home page with health appointment introduction
