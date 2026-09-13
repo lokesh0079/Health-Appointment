@@ -1,3 +1,4 @@
+import { MdHealthAndSafety } from "react-icons/md";
 const Header = () => {
   return (
     <>
@@ -9,7 +10,7 @@ const Header = () => {
         >
           {" "}
          
-          <span className="fs-3 fw-semibold">Health Appointment </span>{" "}
+          <span className="health-icon"><MdHealthAndSafety /> </span>{" "}
         </a>{" "}
         <ul className="nav nav-pills">
           {" "}

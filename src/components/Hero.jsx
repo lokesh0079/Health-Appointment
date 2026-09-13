@@ -1,5 +1,12 @@
+import DoctorFilter from "./DoctorFilter";
+import FeeFilter from "./FeeFilter";
+import LocationFilter from "./LocationFilter";
 
-const HeroList = ({SearchInput,handleSearch,search}) => {
+const HeroList = ({SearchInput,  handleSearch,handleFilterSpecialization,handleLocationFilter,handleFeeFilter
+
+
+
+}) => {
   
   return (
     <>
@@ -11,8 +18,11 @@ const HeroList = ({SearchInput,handleSearch,search}) => {
 
         <div className="input-group mx-auto">
           <input type="search" className="form-control" placeholder="Search For a Doctor" onChange={SearchInput}/>
-          <button className="btn btn-primary"
-onClick={() => handleSearch(search)}>Find Doctor</button>
+          <button className="btn btn-primary"  onClick={handleSearch}>Find Doctor</button>
+    <DoctorFilter handleFilterSpecialization={handleFilterSpecialization}></DoctorFilter>
+    <LocationFilter handleLocationFilter={handleLocationFilter} ></LocationFilter>
+    <FeeFilter handleFeeFilter={handleFeeFilter}
+    ></FeeFilter>
         </div>
       </div>
       </section>

@@ -24,7 +24,7 @@ const doctors = [
   {
     id: 3,
     name: "Dr. Prakash Rao",
-    specialization: "M.D. Physician",
+    specialization: "M.D.Physician",
     experience: "10 years",
     location: "Pune",
     fee: 1000,

@@ -6,6 +6,7 @@ import DoctorDetails from './pages/DoctorDetails.jsx';
 import DoctorList from './components/Doctors.jsx';
 import doctors from "./data/doctors";
 import BookAppointment from './pages/BookAppointment.jsx';
+import AppointmentConfirm from "./pages/AppointmentConfirm";
 
 
 const router=createBrowserRouter([
@@ -23,7 +24,10 @@ const router=createBrowserRouter([
   },{
     path: "/bookappointment-page/:id",
     element: <BookAppointment/>
-  }
+  },{
+     path: "/appointment-confirm",
+    element: <AppointmentConfirm />,
+  },
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>

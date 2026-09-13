@@ -21,3 +21,16 @@ input[type="email"] {
    display: flex;        
   flex-direction: row; 
 }
+
+.health-icon {
+    width: 65px;
+  height: 65px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    background-color:#0d6efd;
+    border-radius: 10px;
+  color: red;
+  font-size: 50px;
+}
