@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <footer className="border-top mt-5 py-4">
+      <footer id="contact" className="border-top mt-5 py-4">
           <div className="container">
   <div className="row">
   <div className="col-md-6">
@@ -33,7 +33,7 @@ const Footer = () => {
               </li>
 
               <li className="nav-item">
-                <a href="#" className="nav-link px-2 text-body-secondary">
+                <a href="#contact" className="nav-link px-2 text-body-secondary">
                   Contact
                 </a>
               </li>

@@ -1,4 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import InvalidAppointmentConfirmed from "./InvalidAppointmentConfirmed";
+
 
 const AppointmentConfirm = () => {
  const location = useLocation(); 
@@ -9,6 +11,7 @@ const { doctorAppointment, patientName, email, phone, date, time, } = location.s
   };
   return (
     <>
+    {doctorAppointment ? (
       <div>
         <h2>Appointment Confirmed ✓</h2>
 
@@ -44,7 +47,7 @@ const { doctorAppointment, patientName, email, phone, date, time, } = location.s
           Back To Home
         </button>
       </div>
-  
+  ):(<InvalidAppointmentConfirmed/>)}
     
     
     </>

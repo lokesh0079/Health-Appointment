@@ -7,6 +7,9 @@ import DoctorList from './components/Doctors.jsx';
 import doctors from "./data/doctors";
 import BookAppointment from './pages/BookAppointment.jsx';
 import AppointmentConfirm from "./pages/AppointmentConfirm";
+import SpecializationDetails from './pages/SpecializationDetails.jsx';
+import Specialization from './components/Specialization.jsx';
+
 
 
 const router=createBrowserRouter([
@@ -28,6 +31,14 @@ const router=createBrowserRouter([
      path: "/appointment-confirm",
     element: <AppointmentConfirm />,
   },
+  {
+    path:"/specializationinfo/:id",
+    element:<SpecializationDetails/>
+  },
+  {
+    path:"/specializationinfo",
+    element:<Specialization/>
+  }
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
