@@ -7,40 +7,27 @@ import Footer from './components/Footer'
 import doctors from "./data/doctors";
 import Specialization from "./components/Specialization"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { Navigate, useNavigate } from "react-router-dom"
+// import FavouriteCart from "./components/FavouriteCart"
 
 
   
 
 function App() {
-  const [search, setSearch]=useState("")
+
  const [filteredDoctors, setFilteredDoctors] = useState(doctors);
-const [location, setLocation]=useState("")
-const [specialization, setSpecialization]=useState("");
-const [searchInput, setSearchInput] = useState("");
-const [fee, setFee]=useState("");
+
+const search = useSelector((state) => state.filters.search);
+const specialization = useSelector( (state) => state.filters.specialization);
+const location = useSelector((state) => state.filters.location);
+const fee = useSelector((state) => state.filters.fee);
 
 
-  
-   const SearchInput=(event)=>{
-setSearchInput(event.target.value)
-
-   }
-  
-  const handleSearch = () => {
-    setSearch(searchInput);
-  };
-
- const handleFilterSpecialization = (event) => {
-  setSpecialization(event.target.value);
-};
-
-const handleLocationFilter = (event) => {
-  setLocation(event.target.value);
-};
-
-const handleFeeFilter=(event)=>{
-setFee(event.target.value)
+ const navigate = useNavigate();
+const FavouritePage=()=>{
+navigate('/favouritePage') 
 }
 
   const FilterDoctor=()=>{
@@ -61,14 +48,12 @@ setFee(event.target.value)
 
                 const feeMatch=
            fee==="" || fee==="under500" && doctor.fee<500 || fee==="500-800" && doctor.fee >=500 && doctor.fee<=800 || fee==="above800" && doctor.fee>800
-           return specializationMatch && locationMatch && searchMatch &&feeMatch;
-
-      
+           return specializationMatch && locationMatch && searchMatch &&feeMatch;     
            
       }
     )
     setFilteredDoctors(resultFiltering)
-    
+   
 } 
 
 useEffect(()=>{
@@ -76,13 +61,12 @@ useEffect(()=>{
     },[specialization,location,search,fee])
   return (
     <>
-    <Header></Header>
-    <HeroList SearchInput={SearchInput}   handleSearch={handleSearch} handleFilterSpecialization={handleFilterSpecialization}  handleLocationFilter={handleLocationFilter} handleFeeFilter={handleFeeFilter}></HeroList>
-    
+    <Header FavouritePage={FavouritePage}/>
+    <HeroList/>
     <DoctorList doctors={filteredDoctors}></DoctorList>
-   
     <Specialization/>
-    <Footer></Footer>
+    <Footer/>
+   
     </>
   )
 }

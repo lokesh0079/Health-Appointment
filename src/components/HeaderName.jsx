@@ -1,7 +1,8 @@
 import { MdHealthAndSafety } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-const Header = () => {
+import { MdFavoriteBorder } from "react-icons/md";
+const Header = ({FavouritePage}) => {
   return (
     <>
       <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
@@ -14,7 +15,7 @@ const Header = () => {
          
           <span className="health-icon"><MdHealthAndSafety /> </span>{" "}
         </Link>
-        <ul className="nav nav-pills">
+        <ul className="nav nav-pills pe-3">
          
           <li className="nav-item">
           <NavLink
@@ -38,6 +39,12 @@ const Header = () => {
   <a href="#contact" className="nav-link">
     Contact
   </a>
+  
+</li>
+ <li className="nav-item">
+
+ <button className="btn btn-outline-primary d-flex align-items-center justify-content-center ms-2" onClick={FavouritePage}><MdFavoriteBorder  size={22}  /></button>
+  
 </li>
         
         </ul>{" "}

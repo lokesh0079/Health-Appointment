@@ -1,11 +1,16 @@
 
 import { useNavigate } from "react-router-dom";
 import InvalidId from "./InvalidId";
+import { MdFavorite,MdFavoriteBorder } from "react-icons/md";
+import { useDispatch,useSelector } from "react-redux";
+import { favouriteActions } from "../redux/favouriteSlice";
+
 
 const DoctorList=({doctors})=>{
 
    const navigate = useNavigate();
-
+const dispatch=useDispatch();
+const favourites=useSelector((state)=> state.favourites)
 
 
   return(
@@ -44,7 +49,17 @@ const DoctorList=({doctors})=>{
 
     <button className="btn btn-primary mt-3" onClick={()=>{  
      navigate(`/doctors/${doctor.id}`);   
-    }}>View Profile</button>
+    }}>View Profile</button> <button type="button" className="btn btn-light ms-2" onClick={()=>{
+      const isFavourite=favourites.some((fav)=> fav.id===doctor.id);
+
+      if(isFavourite){
+        dispatch(favouriteActions.removeFavourite(doctor.id))
+      }
+      else{
+        dispatch(favouriteActions.addFavourite(doctor))
+      }
+
+    }}> {favourites.some((fav)=> fav.id===doctor.id) ? (<MdFavorite  color="red" size={22} /> ):(<MdFavoriteBorder size={22} />)}</button>
   </div>
 </div>
   

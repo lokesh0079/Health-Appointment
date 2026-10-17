@@ -1,0 +1,25 @@
+
+.Appointment-Container{
+max-width: 800px;
+}
+
+.doctorDetails,.patientDetails,.appointmentDetails{
+
+  border: 1px solid rgb(188, 188, 255);
+  max-width: 600px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: white;
+  padding: 20px;
+    box-shadow: 0 3px 10px rgba(224, 127, 127, 0.08);
+  
+}
+.doctorDetails{
+
+}
+.patientDetails{
+ 
+}
+.appointmentDetails{
+ 
+}

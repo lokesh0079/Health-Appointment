@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import doctors from "../data/doctors";
 import InvalidId from "../components/InvalidId";
+import Header from '../components/HeaderName'
 
 const DoctorDetails = () => {
   const { id } = useParams();
@@ -21,7 +22,7 @@ const DoctorDetails = () => {
 
   return (
     <>
-
+<Header/>
       <section className="bg-light min-vh-100 py-5">
 
         <div className="container">

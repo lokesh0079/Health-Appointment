@@ -1,9 +1,14 @@
+import { useDispatch } from "react-redux";
+import { filterActions } from "../redux/filter";
+
 const DoctorFilter=({handleFilterSpecialization})=>{
+
+  const dispatch=useDispatch()
   return(
     
          <select
         className="form-select"
-        onChange={handleFilterSpecialization}
+        onChange={(event)=> dispatch(filterActions.setSpecialization(event.target.value))}
       >
                 <option value="">All Specializations</option>
         <option value="Cardiologist">Cardiology</option>
