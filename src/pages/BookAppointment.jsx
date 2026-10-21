@@ -8,9 +8,9 @@ const BookAppointment = () => {
   const navigate = useNavigate();
   const doctorAppointment = doctors.find((doctor) => doctor.id === Number(id));
 
-  const [email, setEmail] = useState("12@gmail.com");
-  const [patientName, setPatientName] = useState("lokesh");
-  const [phone, setPhone] = useState("123456");
+  const [email, setEmail] = useState("");
+  const [patientName, setPatientName] = useState("");
+  const [phone, setPhone] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [error, setError] = useState("");
