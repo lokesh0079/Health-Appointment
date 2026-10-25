@@ -4,18 +4,16 @@ import Header from './components/HeaderName'
 import HeroList from './components/Hero'
 import DoctorList from './components/Doctors'
 import Footer from './components/Footer'
-import doctors from "./data/doctors";
+
 import Specialization from "./components/Specialization"
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom"
 // import FavouriteCart from "./components/FavouriteCart"
 
-
-  
-
 function App() {
 
+  const doctors = useSelector((state) => state.addDoctor);
  const [filteredDoctors, setFilteredDoctors] = useState(doctors);
 
 const search = useSelector((state) => state.filters.search);
@@ -23,7 +21,9 @@ const specialization = useSelector( (state) => state.filters.specialization);
 const location = useSelector((state) => state.filters.location);
 const fee = useSelector((state) => state.filters.fee);
 
-const favouriteStore=useSelector((state)=> state.favourites)
+
+// const favouriteStore=useSelector((state)=> state.favourites)
+
 
  const navigate = useNavigate();
 const FavouritePage=()=>{
@@ -56,15 +56,17 @@ navigate('/favouritePage')
    
 } 
 
-useEffect(()=>{
-      FilterDoctor();
-    },[specialization,location,search,fee])
 
-    useEffect(()=>{
-        console.log("Favorites from Redux:", favouriteStore);
-     const JsonValue=JSON.stringify(favouriteStore);
-localStorage.setItem("savedDoctor", JsonValue);   //key and value  
-    },[favouriteStore])
+useEffect(()=>{
+  FilterDoctor();
+},[doctors,specialization,location,search,fee])
+
+//can be used with outlets also 1)change app file 2) main file only
+//   useEffect(() => {
+//   const JsonValue = JSON.stringify(favouriteStore);
+//   localStorage.setItem("savedDoctor", JsonValue);
+
+// }, [favouriteStore]);
   return (
     <>
     <Header FavouritePage={FavouritePage}/>
@@ -78,8 +80,3 @@ localStorage.setItem("savedDoctor", JsonValue);   //key and value
 }
 
 export default App;
-
-
-
-
-

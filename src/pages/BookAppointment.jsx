@@ -2,15 +2,19 @@ import { useNavigate, useParams } from "react-router-dom";
 import doctors from "../data/doctors";
 import { useState } from "react";
 import InvalidId from "../components/InvalidId";
+import { useDispatch } from "react-redux";
+import {appointmentSliceActions} from "../redux/appointmentSlice"
 
 const BookAppointment = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const doctorAppointment = doctors.find((doctor) => doctor.id === Number(id));
+  const dispatch=useDispatch();
 
-  const [email, setEmail] = useState("");
-  const [patientName, setPatientName] = useState("");
-  const [phone, setPhone] = useState("");
+
+  const [email, setEmail] = useState("abc@gmail.com");
+  const [patientName, setPatientName] = useState("abc");
+  const [phone, setPhone] = useState("1234");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [error, setError] = useState("");
@@ -46,6 +50,18 @@ const BookAppointment = () => {
     } else {
       setError("");
 
+      const newAppointment={
+         id: Date.now(),
+        doctorAppointment,
+        patientName,
+        email,
+        phone,
+        time,
+        date,
+        status:"Upcoming"
+      }
+      console.log(newAppointment);
+      
       navigate("/appointment-confirm", {
         state: {
           doctorAppointment: doctorAppointment,
@@ -54,8 +70,11 @@ const BookAppointment = () => {
           phone,
           date,
           time,
-        },
+        },      
       });
+
+
+       dispatch(appointmentSliceActions.addAppointment(newAppointment));
     }
   };
 

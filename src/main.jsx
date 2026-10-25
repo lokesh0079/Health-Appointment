@@ -12,6 +12,8 @@ import AppointmentConfirm from "./pages/AppointmentConfirm";
 import SpecializationDetails from './pages/SpecializationDetails.jsx';
 import Specialization from './components/Specialization.jsx';
 import FavouriteCart from './pages/FavouriteCart.jsx'
+import AddDoctor from './pages/AddDoctor.jsx';
+import MyBookings from './pages/MyBookings.jsx';
 
 
 
@@ -45,6 +47,14 @@ const router=createBrowserRouter([
   {
     path:"/favouritePage",
     element:<FavouriteCart/>
+  },
+  {
+    path:"/add-doctors",
+    element:<AddDoctor/>
+  },
+  {
+    path:"/my-bookings",
+    element:<MyBookings/>
   }
 ])
 createRoot(document.getElementById('root')).render(

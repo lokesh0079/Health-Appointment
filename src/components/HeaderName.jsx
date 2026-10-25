@@ -46,6 +46,12 @@ const Header = ({FavouritePage}) => {
  <button className="btn btn-outline-primary d-flex align-items-center justify-content-center ms-2" onClick={FavouritePage}><MdFavoriteBorder  size={22}  /></button>
   
 </li>
+ <li className="nav-item">
+            <Link to={'/add-doctors'} className="nav-link">Add Doctors</Link>
+          </li>{" "}
+           <li className="nav-item">
+            <Link to={'/my-bookings'} className="nav-link">My Bookings</Link>
+          </li>{" "}
         
         </ul>{" "}
       </header>
