@@ -61,7 +61,7 @@ const handleSubmit = (event) => {
  </div>
    <div className="mb-3">
             <label className="form-label">
-            Specialiation
+            Specialization
             </label>
             <input type="text" name="specialization"  placeholder="e.g. Cardiologist" value={specialization} required className="form-control" onChange={(event)=>{
             setSpecialization(event.target.value)         
